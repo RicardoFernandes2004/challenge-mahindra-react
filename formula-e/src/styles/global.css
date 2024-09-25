@@ -1,0 +1,423 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    grid-area: navbar;
+    display: grid;
+    grid-template-areas: "logo links";
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    background-color: #333a3c;
+    height: 130px;
+    padding: 0 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    position: fixed;
+    width: 100%;
+    font-family: 'Koulen';
+    z-index: 1000;
+}
+
+.logo_container {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+}
+
+.hyperlink_container {
+    grid-area: links;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.formula-e {
+    font-size: 48px;
+    color: white;
+    margin-right: 10px;
+}
+
+.logo_container img {
+    width: 128px;
+    height: auto;
+}
+
+.hyperlink_frame {
+    margin-left: 20px;
+}
+
+.hyperlink_rectangle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 154px;
+    height: 46px;
+    background: #14B7ED;
+    border-radius: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.hyperlink_rectangle a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #333a3c;
+    transition: 0.3s;
+}
+
+.my_profile_frame {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.my_profile_frame img {
+    width: 46px;
+    height: 46px;
+    margin: 0 5px;
+}
+
+/* Estilos gerais do footer */
+footer {
+    grid-area: footer;
+    background-color: #333a3c;
+    color: white;
+    font-family: 'Koulen', sans-serif;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Estilos para desktop */
+  @media (min-width: 768px) {
+    footer {
+      position: fixed;
+      bottom: 0;
+      height: 50px;
+    }
+  
+    .footer_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+      padding: 0 20px;
+    }
+  
+    .social_media_container,
+    .footer_bottom,
+    .quicklinks_container {
+      display: flex;
+      align-items: center;
+    }
+  
+    .footer_bottom {
+      /* Centraliza o texto no desktop */
+      justify-content: center;
+    }
+  
+    .footer_bottom p {
+      margin: 0;
+      font-size: 14px;
+    }
+  
+    .footer_frame {
+      display: flex;
+      align-items: center;
+    }
+  
+    .footer_frame h2 {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+  
+    /* Ícones de mídias sociais */
+    .footer_img_container {
+      display: flex;
+      align-items: center;
+    }
+  
+    .footer_img_container a {
+      margin-right: 10px;
+    }
+  
+    .footer_img_container img {
+      width: 25px;
+      height: 25px;
+      transition: transform 0.3s;
+    }
+  
+    .footer_img_container img:hover {
+      transform: scale(1.2);
+    }
+  
+    /* Links rápidos */
+    .quicklinks_container ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .quicklinks_container li {
+      margin-right: 15px;
+    }
+  
+    .quicklinks_container a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  
+    .quicklinks_container a:hover {
+      color: #14B7ED;
+    }
+  }
+  
+/* Estilos para dispositivos móveis */
+@media (max-width: 767px) {
+    footer {
+      position: relative;
+      bottom: auto;
+      width: 100%; /* Certifica-se de que o footer tenha largura total */
+    }
+  
+    .footer_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      width: 100%; /* Garante que o container ocupe 100% da largura */
+      box-sizing: border-box; /* Inclui o padding na largura total */
+    }
+  
+    .social_media_container,
+    .footer_bottom,
+    .quicklinks_container {
+      width: 100%; /* Cada seção ocupa 100% da largura */
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    .footer_frame {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%; /* Garante que o frame ocupe toda a largura */
+    }
+  
+    .footer_img_container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Permite que os ícones quebrem linha se necessário */
+      width: 100%; /* Ocupa toda a largura disponível */
+    }
+  
+    .footer_img_container a {
+      margin: 10px; /* Espaçamento entre os ícones */
+    }
+  
+    .footer_img_container img {
+      width: 35px;
+      height: 35px;
+    }
+  
+    .quicklinks_container ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+      width: 100%; /* Garante que a lista ocupe toda a largura */
+    }
+  
+    .quicklinks_container li {
+      margin-bottom: 10px;
+    }
+  
+    .quicklinks_container a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  
+    .quicklinks_container a:hover {
+      color: #14B7ED;
+    }
+  
+    .footer_bottom p {
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+  
+  
+  
+
+.coins{
+    background-color: #333a3c;
+    width: 336px;
+    height: 100px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-family: Koulen;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    z-index: 1000;
+    position: fixed;
+    right: 0;
+    top: 130px;
+}
+
+.coins img{
+    width: 50px;
+    height: 50px;
+}
+.coins_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile{
+    background-color: #333a3c;
+    width: 336px;
+    height: 400px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-family: Koulen;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    z-index: 1000;
+    position: fixed;
+    right: 40%;
+    top: 30%;
+}
+
+.profile_frame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+.profile_quit{
+    position: fixed;
+    right: 41%;
+    top: 32%;
+    height: 25px;
+    width: 25px;
+}
+
+.profile_quit img{
+    width: 20px;
+    height: 20px;
+    transition: 0.3s;
+    border-radius: 50%;
+    border: 1px none blue;
+}
+
+.profile_quit img:hover{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid blue;
+    border-color: rgba(0, 0, 255, 0.444);
+    cursor: pointer;
+}
+
+.profile_settings{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 40px;
+    width: 100%;
+}
+
+.profile_settings p:hover{
+    color: #14B7ED;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .logo_container img {
+        width: 64px;
+    }
+
+    .formula-e {
+        font-size: 24px;
+    }
+    nav {
+        grid-template-areas:
+            "logo"
+            "links";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        justify-items: center; /* Centraliza os itens horizontalmente */
+        height: auto; /* Permite que a altura se ajuste ao conteúdo */
+        padding: 10px;
+    }
+
+    .hyperlink_container {
+        justify-content: center; /* Centraliza os links de navegação */
+        flex-wrap: wrap; /* Permite que os links quebrem linha se necessário */
+    }
+
+    .hyperlink_frame {
+        margin: 10px; /* Adiciona margem ao redor de cada link para espaçamento */
+    }
+
+    .hyperlink_rectangle {
+        width: 100%;
+        max-width: 200px; /* Limita a largura máxima */
+    }
+
+    .hyperlink_rectangle a {
+        font-size: 18px;
+    }
+}
+
+/* Ajustes responsivos para telas menores que 1175px */
+@media (max-width: 1175px) {
+    /* Reduz o tamanho da fonte do texto "TECHRAC-E" */
+    .formula-e {
+        font-size: 36px;
+    }
+
+    /* Reduz o tamanho da logo */
+    .logo_container img {
+        width: 100px;
+    }
+
+    /* Ajusta a largura dos botões de navegação */
+    .hyperlink_rectangle {
+        width: 140px;
+    }
+
+    /* Reduz o tamanho da fonte dos links de navegação */
+    .hyperlink_rectangle a {
+        font-size: 18px;
+    }
+}
