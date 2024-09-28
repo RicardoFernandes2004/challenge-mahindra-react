@@ -1,7 +1,16 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
 
 function Header({ toggleProfile, setShowCoins }) {
+  const [username, setUsername] = useState(""); // Estado para armazenar o username
+
+  // UseEffect para buscar o username do localStorage quando o componente for montado
+  useEffect(() => {
+    const storedUsername = localStorage.getItem("username"); // Recupera o username do localStorage
+    if (storedUsername) {
+      setUsername(storedUsername); // Atualiza o estado com o username armazenado
+    }
+  }, []);
+
   const handleSmoothScroll = (e, targetId) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
@@ -47,7 +56,8 @@ function Header({ toggleProfile, setShowCoins }) {
                 toggleProfile();
               }}
             >
-              My Profile
+              {username ? `Hey, ${username}` : "My Profile"}
+              {/* Se username estiver presente, mostra "Hey, {username}", senão mostra "My Profile" */}
             </a>
           </div>
           <img src="/img/Ellipse 1.svg" alt="Profile Image" />

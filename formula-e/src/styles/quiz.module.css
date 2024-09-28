@@ -1,0 +1,71 @@
+.quizContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centraliza verticalmente */
+    align-items: center;      /* Centraliza horizontalmente */
+    height: 100vh;            /* Ocupa a altura total da viewport */
+    background-color: #f0f0f0; /* Fundo claro para o contêiner */
+    padding: 20px;
+    text-align: center;       /* Centraliza o texto dentro dos elementos */
+  }
+  
+  .questionSection, .answerSection, .scoreSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; /* Fundo branco para cada seção */
+    border-radius: 10px;       /* Borda arredondada */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque */
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;          /* Largura máxima para não esticar demais */
+  }
+  
+  .questionText {
+    font-size: 1.5rem;         /* Tamanho de fonte maior para as perguntas */
+    font-weight: bold;
+    color: #333;               /* Cor de texto escura */
+  }
+  
+  .answerSection button {
+    background-color: #007BFF; /* Fundo azul para os botões */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .answerSection button:hover {
+    background-color: #0056b3; /* Fundo azul escuro ao passar o mouse */
+  }
+  
+  .scoreSection {
+    background-color: #4CAF50; /* Fundo verde para a pontuação */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .scoreSection button {
+    background-color: #FF5722; /* Fundo laranja para o botão de voltar */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .scoreSection button:hover {
+    background-color: #e64a19; /* Fundo laranja escuro ao passar o mouse */
+  }
+  
