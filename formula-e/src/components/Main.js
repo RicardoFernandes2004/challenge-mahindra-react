@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
-
-
-function Main() {
-  // Array de slides
+function Main({ goToQuiz }) {
   const slides = [
     { src: '/img/fa97d2e7-02ca-4983-a930-4fdaa245a852 1.png', alt: 'mahindra_car' },
     { src: '/img/8bd68290-c0ad-43b6-a1ce-ee162b7d8914 1.png', alt: 'driver1' },
     { src: '/img/728b2253-b9d4-47dd-9051-e970bff2a62f 1.png', alt: 'driver2' },
   ];
 
-  // Estado para controlar o índice do slide
   const [slideIndex, setSlideIndex] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
 
-  // Função para mostrar um slide específico
   const showSlide = (index) => {
     if (index >= slides.length) {
       setSlideIndex(0);
@@ -25,17 +20,14 @@ function Main() {
     }
   };
 
-  // Função para avançar para o próximo slide
   const nextSlide = () => {
     showSlide(slideIndex + 1);
   };
 
-  // Função para retroceder para o slide anterior
   const prevSlide = () => {
     showSlide(slideIndex - 1);
   };
 
-  // useEffect para inicializar o slider
   useEffect(() => {
     const id = setInterval(() => {
       nextSlide();
@@ -49,7 +41,7 @@ function Main() {
       {/* Main Hyperlinks Container */}
       <div className="main_hyperlinks_container">
         <h2><a href="#">Race</a></h2>
-        <h2><a href="#">Quiz</a></h2>
+        <h2><a href="#" onClick={goToQuiz}>Quiz</a></h2> {/* Chama a função goToQuiz ao clicar */}
       </div>
 
       {/* Info Slider */}
@@ -87,20 +79,19 @@ function Main() {
             <ul>
               <li>#1 - </li>
               <li>#2 - </li>
-                <li>#3 - </li>
-                <li>#4 - </li>
-                <li>#5 - </li>
-                <li>#6 - </li>
-                <li>#7 - </li>
-                <li>#8 - </li>
-                <li>#9 - </li>
-                <li>#10 - </li>                
+              <li>#3 - </li>
+              <li>#4 - </li>
+              <li>#5 - </li>
+              <li>#6 - </li>
+              <li>#7 - </li>
+              <li>#8 - </li>
+              <li>#9 - </li>
+              <li>#10 - </li>                
             </ul>
             <p>My Ranking: #x</p>
           </div>
         </div>
       </div>
-
     </main>
   );
 }
