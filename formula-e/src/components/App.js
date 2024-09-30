@@ -7,55 +7,51 @@ import Solution from './Solution';
 import Reason from './Reason';
 import Profile from './Profile';
 import Coins from './Coins';
-import Login from './LoginScreen'; // Importa o componente de Login
-import Quiz from './Quiz'; // Importa o componente de Quiz
+import Login from './LoginScreen';
+import Quiz from './Quiz';
+import styles from '../styles/footer_breakpoint_quiz.module.css'; // Importa o CSS Module
 import '../styles/global.css';
 import '../styles/styles.css';
 
 function App() {
   const [showProfile, setShowProfile] = useState(false);
   const [showCoins, setShowCoins] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado para controle de login
-  const [currentPage, setCurrentPage] = useState('main'); // Estado para controlar qual página mostrar
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentPage, setCurrentPage] = useState('main');
 
   const toggleProfile = () => setShowProfile(!showProfile);
-
-  // Função chamada após o login
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
-
-  // Função para alternar entre Main e Quiz
+  const handleLogin = () => setIsLoggedIn(true);
   const goToQuiz = () => setCurrentPage('quiz');
   const goToMain = () => setCurrentPage('main');
 
-  // Se o usuário não estiver logado, exibe a tela de login
   if (!isLoggedIn) {
     return <Login onLogin={handleLogin} />;
   }
 
   return (
     <div className="containerAll">
-      {/* Componentes Ocultos */}
       {showCoins && <Coins />}
       {showProfile && <Profile toggleProfile={toggleProfile} />}
 
-      {/* Header estará visível em todas as páginas */}
       <Header toggleProfile={toggleProfile} setShowCoins={setShowCoins} />
 
-      {/* Condicional para exibir Main ou Quiz */}
       {currentPage === 'main' ? (
         <>
-          <Main goToQuiz={goToQuiz} /> {/* Passa a função goToQuiz para Main */}
+          <Main goToQuiz={goToQuiz} />
           <Problem />
           <Solution />
           <Reason />
         </>
       ) : (
-        <Quiz goToMain={goToMain} /> 
+        <>
+          <Quiz goToMain={goToMain} />
+          {/* Adiciona o footer apenas no Quiz com estilo específico */}
+          <Footer className={styles.footerQuiz} />
+        </>
       )}
 
-      <Footer />
+      {/* Footer padrão para as outras páginas */}
+      {currentPage !== 'quiz' && <Footer />}
     </div>
   );
 }
