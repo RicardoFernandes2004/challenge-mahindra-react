@@ -36,11 +36,17 @@ function Main({ goToQuiz }) {
     return () => clearInterval(id); // Limpa o intervalo ao desmontar o componente
   }, [slideIndex]);
 
+  const handleRaceClick = (e) => {
+    e.preventDefault();
+    // Redireciona para o jogo
+    window.location.href = `${process.env.PUBLIC_URL}/game/index.html`;
+  };
+
   return (
     <main className='main'>
       {/* Main Hyperlinks Container */}
       <div className="main_hyperlinks_container">
-        <h2><a href="#">Race</a></h2>
+        <h2><a href="#" onClick={handleRaceClick}>Race</a></h2> {/* Redireciona para o jogo */}
         <h2><a href="#" onClick={goToQuiz}>Quiz</a></h2> {/* Chama a função goToQuiz ao clicar */}
       </div>
 
